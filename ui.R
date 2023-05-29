@@ -1,7 +1,7 @@
 
 dashboardPage(skin = "black",
   
-  dashboardHeader(title="Cognitive Modelling - IED", titleWidth = 250),
+  dashboardHeader(title="Cognitive Modelling - IED", titleWidth = 350),
   
   dashboardSidebar(collapsed = F, width = 250,#width = 250, 
 
@@ -62,14 +62,14 @@ dashboardPage(skin = "black",
                 h4("Free Parameters Group 1"),
                 sliderInput("yearsley_r1", "Reward Learning Rate (𝛼_r)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
                 sliderInput("yearsley_p1", "Punishment Learning Rate (𝛼_p)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-                sliderInput("yearsley_f1", "Attention Switching Parameter (𝜙)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%")),
+                sliderInput("yearsley_f1", "Dimension Shift Parameter (𝜙)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%")),
 
             column(width=6,
 
                 h4("Free Parameters Group 2"),
                 sliderInput("yearsley_r2", "Reward Learning Rate (𝛼_r)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
                 sliderInput("yearsley_p2", "Punishment Learning Rate (𝛼_p)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-                sliderInput("yearsley_f2", "Attention Switching Parameter (𝜙)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"))),
+                sliderInput("yearsley_f2", "Dimension Shift Parameter (𝜙)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"))),
             
             tabPanel("Fixed Parameters",
                      

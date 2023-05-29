@@ -186,15 +186,15 @@ about = HTML("<p>This app was developed as part of the Master's Thesis by Louise
 
 info_all = HTML("<ul>
                 <li><b>model</b>: Defines the model used for simulation, e.g. fRL or lnfRL.</li>
-                <li><b>group</b>: Defines the group the agent belongs to..</li>
+                <li><b>group</b>: Defines the group the agent belongs to.</li>
                 <li><b>agent</b>: Defines the id of the agent.</li>
                 <li><b>seed_agent</b>: Defines the seed the data of the agent was simulated with.</li>
                 <li><b>stage</b>: Defines the stage in the task (out of 9 stages).</li>
-                <li><b>trial</b>: Defines the trial in a stage (i.e. resets at the beginning of each stage.</li> 
+                <li><b>trial</b>: Defines the trial in a stage (resets at the beginning of each stage.</li> 
                 <li><b>f1</b>: Defines the feature weight of f1. Note that f1 always refers to the correct feature in a given trial.</li>
                 <li><b>f2</b>: Defines the feature weight of f2, referring to the incorrect feature of the relevant dimension in each trial.</li>
                 <li><b>f3</b>: Defines the feature weight of f3, referring to the first feature of the second dimension.</li>
-                <li><b>f4</b>: Defines the feature weight of ff, referring to the second feature of the second dimension.</li>
+                <li><b>f4</b>: Defines the feature weight of f4, referring to the second feature of the second dimension.</li>
                 <li><b>stimulus</b>: Defines the stimulus set, (SS1 or SS2).</li>
                 <li><b>choicep/correctp</b>: Defines the probability of the subject choosing the correct stimulus.</li>
                 <li><b>choice</b>: Defines the choice of the agent (1 = correct, 0 = incorrect).</li>
@@ -208,54 +208,52 @@ info_yearsley = HTML("<ul>
                     <li><b>w3</b>: Defines the update signal used for updating of f3 (referred to as feedback function in Yearsley et al (2021)).</li>
                     <li><b>w4</b>: Defines the update signal used for updating of f4 (referred to as feedback function in Yearsley et al (2021)).</li>
                     <li><b>d</b>: Defines the decision consistency parameter, fixed at 3.</li>
-                    <li><b>lambda</b>: Defines the disengagement parameter, fixed at 0.25 (referred to as focus in Yearsley et al (2021)).</li>
+                    <li><b>lambda</b>: Defines the disengagement parameter (referred to as focus in Yearsley et al (2021)).</li>
                     <li><b>r</b>: Defines the reward learning rate.</li>
                     <li><b>p</b>: Defines the punishment learning rate.</li>
-                    <li><b>C</b>: Defines the continuation parameter parameter (referred to as control switch in Yearsley et al., (2021)).</li>
-                    <li><b>f</b>: Defines phi, the dimension shift parameter (referred to as attention shift parameter in Yearsley et al., (2021)).</li>
+                    <li><b>C</b>: Defines the continuation parameter (referred to as control switch in Yearsley et al., (2021)).</li>
+                    <li><b>f</b>: Defines 𝜙, the dimension shift parameter (referred to as attention switch parameter in Yearsley et al., (2021)).</li>
                     </ul>")
 
 info_talwar = HTML("<ul>
-                    <li><b>model</b>: Defines the model used for simulation, e.g. fRL or lnfRL.</li>
-                    <li><b>alpha</b>: Defines the general learning rate.</li>
+                    <li><b>alpha</b>: Defines the generic learning rate.</li>
                     <li><b>beta</b>: Defines the inverse temperature.</li>
                     <li><b>theta</b>: Defines the dimension weight in each trial.</li>
-                    <li><b>theta_init</b>: Defines the initial dimension weight, theta0.</li>
+                    <li><b>theta_init</b>: Defines the initial dimension weight, 𝜃_0</li>
                     <li><b>epsilon</b>: Irrelevant for the included models.</li>
                     </ul>")
 
 info_ln = HTML("<ul>
-                <li><b>model</b>: Defines the model used for simulation, e.g. fRL or lnfRL.</li>
                 <li><b>alpha_pos</b>: Defines the reward learning rate.</li>
                 <li><b>alpha_neg</b>: Defines the punishment learning rate.</li>
                 <li><b>beta</b>: Defines the inverse temperature.</li>
                 <li><b>theta</b>: Defines the dimension weight in each trial.</li>
-                <li><b>theta_init</b>: Defines the initial dimension weight, theta0.</li>
+                <li><b>theta_init</b>: Defines the initial dimension weight, 𝜃_0</li>
                 <li><b>epsilon</b>: Irrelevant for the included models.</li>
                 </ul>")
 
 
 # YEARSLEY # 
 
-model_yearsley = HTML("<p>This model was implemented on the based on <a href='https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2484?casa_token=h3TPxiRZ9TYAAAAA%3AzlRJsWT9G0ZLPS2_i5-Myw4Z13rzup_fbm7Yhrq51SEFzeetxP37yxOMoe9LrV5u9nkk_oJRttMD868'>Yearsley et al. (2021)</a>.
-                        It assumed that all four features are associated with a feature weight, which determines the expected value of each stimulus. The expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
-                        its feature weights based on a feedback function. The feedback function allows for reallocation of weight across features of the same dimension and features of opposite dimensions.</p>")
+model_yearsley = HTML("<p>This model was implemented based on <a href='https://onlinelibrary.wiley.com/doi/full/10.1002/aur.2484?casa_token=h3TPxiRZ9TYAAAAA%3AzlRJsWT9G0ZLPS2_i5-Myw4Z13rzup_fbm7Yhrq51SEFzeetxP37yxOMoe9LrV5u9nkk_oJRttMD868'>Yearsley et al. (2021)</a>.
+                        It assumes that all four features are associated with a feature weight, which determines the expected value of each stimulus. The expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
+                        its feature weights based on a update signal The update signal allows for reallocation of weight across features of the same dimension and features of the opposite dimension.</p>")
 
 
 parameters_yearsley = HTML("<b><i>Free Parameters:</b></i>
                             <p><b>Reward Learning Rate (𝛼_r)</b>: Determines updating of feature weights subsequent to positive feedback.</p>
                             <p><b>Punishment Learning Rate (𝛼_p)</b>: Determines updating of feature weights subsequent to negative feedback.</p>
-                            <p><b>Attention Switch Paramter (𝜙)</b>: Determines shifting of feature weight across dimensions. If 𝜙< 0.5, there is increased shifting within features of the same dimension. If 𝜙> 0.5, there is increased shifting across features of opposite dimensions.</p>
+                            <p><b>Dimension Shift Paramter (𝜙)</b>: Determines shifting of feature weight across dimensions. If 𝜙< 0.5, there is increased shifting within features of the same dimension. If 𝜙> 0.5, there is increased shifting across features of opposite dimensions.</p>
                             <b><i>Fixed Parameters:</b></i>
-                            <p><b>Initial Decision Consistency (d_0)</b>: Determines the initial decision consistency, multlied by exp(-lambda*(trial-1)) to get decision consistency.</p>
-                            <p><b>Disengagement Parameter (λ)</b>: Determines focus of the agent, which decreases throught trails in a stage by exp(-lambda*(trial-1)), and affects decision consistency.</p>
-                            <p><b>Continuation Parameter (C)</b>: Determines how much an agent relies on pevious weights or resets weight at the beginning of a stage with new stimuli. If C = 0 the agent resets all weights, if C = 1 the agent only relies on previous weights.</p>")
+                            <p><b>Initial Decision Consistency (d_0)</b>: Determines the initial decision consistency, multiplied by exp(-λ*(trial-1)) to get decision consistency.</p>
+                            <p><b>Disengagement Parameter (λ)</b>: Determines focus of the agent, which decreases throughout trails in a stage by exp(-λ*(trial-1)), and affects decision consistency.</p>
+                            <p><b>Continuation Parameter (C)</b>: Determines how much an agent relies on previous weights or resets weight at the beginning of a stage with new stimuli. If C = 0 the agent resets all weights, if C = 1 the agent only relies on previous weights.</p>")
   
   
   
 # TALWAR fRL # 
 
-model_talwar1 = HTML("<p>This model was implemented on the based on <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>.
+model_talwar1 = HTML("<p>This model was implemented based on <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>.
                         It assumed that all four features are associated with a feature weight, which determines the expected value of each stimulus. The expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
                         its feature weights based on a prediction error and a generic learning rate. This model cannot account for the fact that features belong to different dimensions.</p>")
 
@@ -266,20 +264,20 @@ parameters_talwar1 = HTML("<p><b>Generic Learning Rate (𝛼_r)</b>: Determines 
 
 # TALWAR cafRL # 
 
-model_talwar2 = HTML("<p>This model was implemented on the based on <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>.
+model_talwar2 = HTML("<p>This model was implemented based on <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>.
                         It assumed that all four features are associated with a feature weight and a dimension. A dimension weight accounts for dimensional biases of the agent
-                        and impacts the expected value of a stimulus. Furhter, the expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
-                        its feature weights and dimension weight based backpropagation and a generic learning rate.</p>")
+                        and impacts the expected value of a stimulus. Further, the expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
+                        its feature weights and dimension weight based on backpropagation and a generic learning rate.</p>")
 
 
 parameters_talwar2 = HTML("<p><b>Generic Learning Rate (𝛼_r)</b>: Determines updating of feature weights subsequent to positive or negative feedback.</p>
                             <p><b>Inverse Temperature (𝛽)</b>: Determines choice consistency. Smaller values lead to more random choices, while larger values lead to more deterministic choices.</p>
-                            <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that in the model the value ranges from -∞ to ∞, but here defined on a scale from 0 to 1 for interpretability.</p>")
+                            <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that in the model the value ranges from -∞ to ∞, but here it isdefined on a scale from 0 to 1 for interpretability.</p>")
 
 # LN fRL # 
 
-model_ln1 = HTML("<p>This model was inspired and adopted from form <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>, but modified by LN.
-                      It assumed that all four features are associated with a feature weight, which determines the expected value of each stimulus. The expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
+model_ln1 = HTML("<p>This model was inspired and adopted from from <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>, but modified by LN.
+                      It assumes that all four features are associated with a feature weight, which determines the expected value of each stimulus. The expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
                       its feature weights based on a prediction error, and two separate learning rates. This model cannot account for the fact that features belong to different dimensions.</p>")
 
 
@@ -288,15 +286,15 @@ parameters_ln1 = HTML("<p><b>Reward Learning Rate (𝛼_r)</b>: Determines updat
                        <p><b>Inverse Temperature (𝜙)</b>: Determines choice consistency. Smaller values lead to more random choices, while larger values lead to more deterministic choices.</p>")
 
 
-# TALWAR cafRL # 
+# LN cafRL # 
 
 model_ln2 = HTML("<p>This model was inspired and adopted from <a href='https://www.biorxiv.org/content/10.1101/2021.10.05.463165v1.abstract'>Talwar et al. (2021)</a>, but modified by LN.
-                        It assumed that all four features are associated with a feature weight and a dimension. A dimension weight accounts for dimensional biases of the agent
-                        and impacts the expected value of a stimulus. Furhter, the expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
-                        its feature weights and dimension weight based backpropagation and two separate learning rates.</p>")
+                        It assumes that all four features are associated with a feature weight and a dimension. A dimension weight accounts for dimensional biases of the agent
+                        and impacts the expected value of a stimulus. Further, the expected values determine the choice of the agent. Subsequent to a choice, the agent updates 
+                        its feature weights and dimension weight based on backpropagation and two separate learning rates.</p>")
 
 
 parameters_ln2 = HTML("<p><b>Reward Learning Rate (𝛼_r)</b>: Determines updating of feature weights subsequent to positive feedback.</p>
                            <p><b>Punishment Learning Rate (𝛼_p)</b>: Determines updating of feature weights subsequent to negative feedback.</p>
                            <p><b>Inverse Temperature (𝛽)</b>: Determines choice consistency. Smaller values lead to more random choices, while larger values lead to more deterministic choices.</p>
-                           <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that in the model the value ranges from -∞ to ∞, but here defined on a scale from 0 to 1 for interpretability.</p>")
+                           <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that in the model the value ranges from -∞ to ∞, but here it is defined on a scale from 0 to 1 for interpretability.</p>")
