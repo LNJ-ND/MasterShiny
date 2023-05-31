@@ -15,7 +15,7 @@ function(input, output, session) {
   
   # Get the data
   yearsley_data = reactive({get_data_yearsley(input$yearsley_agents,
-                                              input$yearsley_p1, input$yearsley_r1, input$yearsley_p1, input$yearsley_d1, input$yearsley_lambda1, input$yearsley_C1,
+                                              input$yearsley_f1, input$yearsley_r1, input$yearsley_p1, input$yearsley_d1, input$yearsley_lambda1, input$yearsley_C1,
                                               input$yearsley_f2, input$yearsley_r2, input$yearsley_p2, input$yearsley_d2, input$yearsley_lambda2, input$yearsley_C2)})
   
   # Get the plots
