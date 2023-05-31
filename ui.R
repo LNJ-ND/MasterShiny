@@ -78,14 +78,14 @@ dashboardPage(skin = "black",
                  h4("Fixed Parameters Group 1"),
                  sliderInput("yearsley_d1", "Initial Decision Consistency (d_0)", min=0, max=20, value=3, step=1, ticks=F, width="100%"),
                  sliderInput("yearsley_lambda1", "Disengagement Parameter (λ)", min=0, max=1, value=0.05, step=0.05, ticks=F, width="100%"),
-                 sliderInput("yearsley_C1", "Continuity Parameter (C)", min=0, max=1, value=0.95, step=0.05, ticks=F, width="100%")),
+                 sliderInput("yearsley_C1", "Continuation Parameter (C)", min=0, max=1, value=0.95, step=0.05, ticks=F, width="100%")),
             
             column(width=6,
                    
                h4("Fixed Parameters Group 2"),
                sliderInput("yearsley_d2", "Initial Decision Consistency (d_0)", min=0, max=20, value=3, step=1, ticks=F, width="100%"),
                sliderInput("yearsley_lambda2", "Disengagement Parameter (λ)", min=0, max=1, value=0.05, step=0.05, ticks=F, width="100%"),
-               sliderInput("yearsley_C2", "Continuity Parameter (C)", min=0, max=1, value=0.95, step=0.05, ticks=F, width="100%"))),
+               sliderInput("yearsley_C2", "Continuation Parameter (C)", min=0, max=1, value=0.95, step=0.05, ticks=F, width="100%"))),
             
             tabPanel("Agents",
                      
