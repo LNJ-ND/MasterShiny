@@ -272,7 +272,7 @@ model_talwar2 = HTML("<p>This model was implemented based on <a href='https://ww
 
 parameters_talwar2 = HTML("<p><b>Generic Learning Rate (𝛼_r)</b>: Determines updating of feature weights subsequent to positive or negative feedback.</p>
                             <p><b>Inverse Temperature (𝛽)</b>: Determines choice consistency. Smaller values lead to more random choices, while larger values lead to more deterministic choices.</p>
-                            <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that the value ranges from -∞ to ∞, but here it is defined on a scale from -5 to 5, as the logit() of -5 and 5 closely approximate 0 and 1, respectively. If 𝜃_0 > the agent weights the intiially relevant dimension more when the second dimension is introduced in stage 3, while if 𝜃_0 < 0, the agent weighs the newly introduced dimension more. </p>")
+                            <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that the value ranges from -∞ to ∞, but here it is defined on a scale from -5 to 5. If 𝜃_0 > 0, the agent weights the initially relevant dimension more when the second dimension is introduced in stage 3, while if 𝜃_0 < 0, the agent weighs the newly introduced dimension more. </p>")
 
 # LN fRL # 
 
@@ -297,4 +297,4 @@ model_ln2 = HTML("<p>This model was inspired and adopted from <a href='https://w
 parameters_ln2 = HTML("<p><b>Reward Learning Rate (𝛼_r)</b>: Determines updating of feature weights subsequent to positive feedback.</p>
                            <p><b>Punishment Learning Rate (𝛼_p)</b>: Determines updating of feature weights subsequent to negative feedback.</p>
                            <p><b>Inverse Temperature (𝛽)</b>: Determines choice consistency. Smaller values lead to more random choices, while larger values lead to more deterministic choices.</p>
-                           <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that the value ranges from -∞ to ∞, but here it is defined on a scale from -5 to 5, as they approxiate 0 and 1, respectively. If 𝜃_0 > the agent weights the intiially relevant dimension more when the second dimension is introduced in stage 3, while if 𝜃_0 < 0, the agent weighs the newly introduced dimension more.</p>")
+                           <p><b>Initial Dimension Weight (𝜃_0)</b>: Determines dimension bias when the second dimension is introduced. Note that the value ranges from -∞ to ∞, but here it is defined on a scale from -5 to 5. If 𝜃_0 > 0, the agent weights the initially relevant dimension more when the second dimension is introduced in stage 3, while if 𝜃_0 < 0, the agent weighs the newly introduced dimension more. </p>")
