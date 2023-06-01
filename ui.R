@@ -124,14 +124,14 @@ dashboardPage(skin = "black",
                    
                h4("Free Parameters Group 1"),
                sliderInput("talwar1_alpha1", "Generic Learning Rate (𝛼)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-               sliderInput("talwar1_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%")),
+               sliderInput("talwar1_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%")),
                
                    
             column(width=6,
                    
                h4("Free Parameters Group 2"),
                sliderInput("talwar1_alpha2", "Generic Learning Rate (𝛼)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-               sliderInput("talwar1_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%"))),
+               sliderInput("talwar1_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%"))),
             
             tabPanel("Agents",
                      
@@ -144,7 +144,7 @@ dashboardPage(skin = "black",
           tabBox(width=4, height=300, side = "left",
                  
              tabPanel("Model", model_talwar1),
-             tabPanel("Parameters", parameters_talwar1),
+             tabPanel("Parameters", parameters_talwar1, style="overflow-y:scroll; max-height: 290px"),
              tabPanel("Download Data", p("You can download the simulated data here:"),
                       downloadLink('talwar1_download', 'Download data!')))),
     
@@ -174,16 +174,16 @@ dashboardPage(skin = "black",
                        
                h4("Free Parameters Group 1"),
                sliderInput("talwar2_alpha1", "Generic Learning Rate (𝛼)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-               sliderInput("talwar2_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%"),
-               sliderInput("talwar2_theta01", "Initial Dimension Weight (𝜃_0)", min=0, max=1, value=0.5, step=0.05, ticks=F, width="100%")),
+               sliderInput("talwar2_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%"),
+               sliderInput("talwar2_theta01", "Initial Dimension Weight (𝜃_0)", min=-5, max=5, value=0, step=0.05, ticks=F, width="100%")),
         
             
             column(width=6,
                        
                h4("Free Parameters Group 2"),
                sliderInput("talwar2_alpha2", "Generic Learning Rate (𝛼)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-               sliderInput("talwar2_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%"),
-               sliderInput("talwar2_theta02", "Initial Dimension Weight (𝜃_0)", min=0, max=1, value=0.5, step=0.05, ticks=F, width="100%"))),
+               sliderInput("talwar2_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%"),
+               sliderInput("talwar2_theta02", "Initial Dimension Weight (𝜃_0)", min=-5, max=5, value=0, step=0.05, ticks=F, width="100%"))),
             
             tabPanel("Agents",
                      
@@ -196,7 +196,7 @@ dashboardPage(skin = "black",
           tabBox(width=4, height=350,
 
              tabPanel("Model", model_talwar2),
-             tabPanel("Parameters", parameters_talwar2),
+             tabPanel("Parameters", parameters_talwar2, style="overflow-y:scroll; max-height: 290px"),
              tabPanel("Download Data", p("You can download the simulated data here:"),
                       downloadLink('talwar2_download', 'Download data!')))),
     
@@ -226,7 +226,7 @@ dashboardPage(skin = "black",
                      h4("Free Parameters Group 1"),
                      sliderInput("ln1_alpha_pos1", "Reward Learning Rate (𝛼_p)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
                      sliderInput("ln1_alpha_neg1", "Punishment Learning Rate (𝛼_r)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-                     sliderInput("ln1_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%")),
+                     sliderInput("ln1_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%")),
               
               
               column(width=6,
@@ -234,7 +234,7 @@ dashboardPage(skin = "black",
                      h4("Free Parameters Group 2"),
                      sliderInput("ln1_alpha_pos2", "Reward Learning Rate (𝛼_p)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
                      sliderInput("ln1_alpha_neg2", "Punishmnet Learning Rate (𝛼_r)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-                     sliderInput("ln1_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%"))),
+                     sliderInput("ln1_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%"))),
           
           
               tabPanel("Agents",
@@ -247,7 +247,7 @@ dashboardPage(skin = "black",
           tabBox(width=4, height=350,
                  
                  tabPanel("Model", model_ln1),
-                 tabPanel("Parameters", parameters_ln1),
+                 tabPanel("Parameters", parameters_ln1, style="overflow-y:scroll; max-height: 290px"),
                  tabPanel("Download Data", p("You can download the simulated data here:"),
                           downloadLink('ln1_download', 'Download data!')))),
         
@@ -277,8 +277,8 @@ dashboardPage(skin = "black",
                      h4("Free Parameters Group 1"),
                      sliderInput("ln2_alpha_pos1", "Reward Learning Rate (𝛼_p)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
                      sliderInput("ln2_alpha_neg1", "Punishment Learning Rate (𝛼_r)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-                     sliderInput("ln2_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%"),
-                     sliderInput("ln2_theta01", "Initial Dimension Weight (𝜃_0)", min=0, max=1, value=0.5, step=0.05, ticks=F, width="100%")),
+                     sliderInput("ln2_beta1", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%"),
+                     sliderInput("ln2_theta01", "Initial Dimension Weight (𝜃_0)", min=-5, max=5, value=0, step=0.05, ticks=F, width="100%")),
               
               
               column(width=6,
@@ -286,8 +286,8 @@ dashboardPage(skin = "black",
                      h4("Free Parameters Group 2"),
                      sliderInput("ln2_alpha_pos2", "Reward Learning Rate (𝛼_p)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
                      sliderInput("ln2_alpha_neg2", "Punishmnet Learning Rate (𝛼_r)", min=0, max=1, value=0.50, step=0.05, ticks=F, width="100%"),
-                     sliderInput("ln2_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=1, ticks=F, width="100%"),
-                     sliderInput("ln2_theta02", "Initial Dimension Weight (𝜃_0)", min=0, max=1, value=0.5, step=0.05, ticks=F, width="100%"))),
+                     sliderInput("ln2_beta2", "Inverse Temperature (𝛽)", min=0, max=20, value=2, step=0.05, ticks=F, width="100%"),
+                     sliderInput("ln2_theta02", "Initial Dimension Weight (𝜃_0)", min=-5, max=5, value=0, step=0.05, ticks=F, width="100%"))),
               
               tabPanel("Agents",
                        
@@ -300,7 +300,7 @@ dashboardPage(skin = "black",
           tabBox(width=4, height=450,
                  
                  tabPanel("Model", model_ln2),
-                 tabPanel("Parameters", parameters_ln2),
+                 tabPanel("Parameters", parameters_ln2, style="overflow-y:scroll; max-height: 390px"),
                  tabPanel("Download Data", p("You can download the simulated data here:"),
                           downloadLink('ln2_download', 'Download data!')))),
         
